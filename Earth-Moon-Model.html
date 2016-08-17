@@ -5,7 +5,8 @@
     ==  File name:	Earth-Moon-Model
     ==  Author:		Zachery Glass
     ==  Date: 		5/31/2016
-    == Description:	This program displays a 3D model of the sun, earth and moon.
+    == Description:	This program displays a 3D model of the sun, earth and moon. The user may interact with the 
+    ==				program via click and drag, the W, A, S, D keys, or the  UP, LEFT, DOWN and RIGHT arrow keys. 
     -->
 
   <head>
@@ -165,7 +166,7 @@
         yAxis    = [ vec3(+0.0, +0.0, +0.0), vec3(+0.0, -0.0, +0.0) ] ;
         zAxis    = [ vec3(+0.0, +0.0, +0.0), vec3(+0.0, +0.0, -0.0) ] ;
         
-        // calc sun, earth, and moon points vai function call
+        // calc sun, earth, and moon points via function call
         calcSunPoints();
         calcEarthPoints();
         calcMoonPoints();
