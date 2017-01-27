@@ -2,16 +2,13 @@
 <html>
 
   <!--
-    ==  File name:	Earth-Moon-Model
+    ==  File name:	Earth-Moon-Model.html
     ==  Author:		Zachery Glass
-    ==  Date: 		5/31/2016
-    == Description:	This program displays a 3D model of the sun, earth and moon. The user may interact with the 
-    ==				program via click and drag, the W, A, S, D keys, or the  UP, LEFT, DOWN and RIGHT arrow keys. 
     -->
 
   <head>
     <meta charset='UTF-8'>
-    <title>Interactive Earth Model</title>
+    <title>Interactive Earth-Moon Model</title>
 
     <!-- ================================================================ -->
 
@@ -610,22 +607,126 @@
     </script>
 
     <!-- ================================================================ -->
-  </head>
-  <body>
-    <table style="width:100%">
-      <tr>
-        <td><canvas id='glCanvas' width='700' height='700' style="padding: 15px">
-            </canvas>
-      </td>
-        <td style="font-size:26px">
-          <ul>
-            <li>Click and drag with the left mouse button to move the camera along the sides of a hypothetical cylinder.</li> <br>
-            <li>Use the W, A, S, D or arrow keys to move the camera along the sides of a hypothetical cylinder.</li> <br>
-            <li>Hold SHIFT and press the UP, DOWN or W, S to zoom the camera closer or further from the sun. (Change the radius of the cylinder, within a range) </li> <br>
-          </ul>
-        </td>
-      </tr>
-    </table>
-  </body>
+  <style>
+
+  body {
+    background: #e3e3e3;
+    margin-top: 80px;
+  }
+
+  #container {
+      display: inline-block;
+      position: relative;
+      width: 50%;
+      float: left;
+  }
+
+  #dummy {
+      margin-top: 75%; /* 4:3 aspect ratio */
+  }
+
+  #element {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: silver; /* show me! */
+      margin-left: 10px;
+  }
+
+  #glCanvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  #instructions {
+    position: absolute;
+    right: 5%;
+    width: 40%;
+    font-size: 24px;
+  }
+
+  table, tr, td {
+    border: 1px black solid;
+  }
+
+  tr {
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+      background-color: white;
+  }
+
+  .button {
+    background-color: ForestGreen;  
+    border-radius: 5px;
+    color: white;
+    padding: .5em;
+    text-decoration: none;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 22px;
+  }
+
+  .button:focus,
+  .button:hover {
+    background-color: DarkGreen;
+  }
+
+  </style>
+</head>
+
+<body>
+ <a href="https://github.com/ZacheryGlass/Earth-Moon-Model" class="button" role="button">
+    Return to Source Code
+</a>
+
+<div id="container">
+  <div id="dummy"></div>
+  <div id="element">
+      <canvas id='glCanvas' width="800" height="800"></canvas>
+  </div>
+</div>
+
+<table id="instructions">
+  <tr>
+    <th>Key</th>
+    <th>Function</th> 
+  </tr>
+  <tr>
+    <td>W</td>
+    <td>Move camera up</td>
+  </tr>
+  <tr>
+    <td>A</td>
+    <td>Move camera left</td>
+  </tr>
+  <tr>
+    <td>S</td>
+    <td>Move camera down</td>
+  </tr>
+  <tr>
+    <td>D</td>
+    <td>Move camera right</td>
+  </tr>
+
+  <tr>
+    <td>Shift + W</td>
+    <td>Zoom in</td>
+  </tr>
+  <tr>
+    <td>Shift + S</td>
+    <td>Zoom out</td>
+  </tr>
+  <tr>
+    <td>Click & Drag</td>
+    <td>Move camera any direction</td>
+  </tr>
+</table>
+  
+</body>
 
 </html>
